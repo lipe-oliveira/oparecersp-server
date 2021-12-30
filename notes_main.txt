@@ -1,0 +1,20 @@
+BIBLIOTECAS: 
+*yarn add mongoose
+*yarn add express
+*yarn add body-parser
+*yarn add bcryptjs
+*yarn add jsonwebtoken
+*yarn add mongoose-paginate
+
+DEPLOY ON HEROKU:
+https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku
+heroku logs --tail --app your_app_name
+
+git remote add origin https://github.com/lipe-oliveira/Katte_Brindes.git
+
+git add .
+git commit -m aaa
+git push
+
+npm i -g heroku
+heroku logs -t --app bibiboom-backend
