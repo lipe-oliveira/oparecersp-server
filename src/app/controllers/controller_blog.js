@@ -6,14 +6,14 @@ router.post('/blog', async(req, res) => {
     try{
         const{title, lide, format} = req.body;
 
-        console.log(title);
+        console.log(req.body);
 
         await Blog.create(req.body);
 
         return await res.send("Success");
     }
     catch(err){
-        console.log(err);
+        console.log("erro:" + err);
     }
 });
 
