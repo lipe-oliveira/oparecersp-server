@@ -24,7 +24,8 @@ const schema = new mongoose.Schema({
         },
         data:{
             type: String,
-            setMaxListeners: 1000000}
+            setMaxListeners: 1000000
+        }
         }
     ],
     format:{
@@ -36,7 +37,7 @@ const schema = new mongoose.Schema({
     }
 });
 
-schema.plugin(mongoose_paginate);
+await schema.plugin(mongoose_paginate);
 
 const Blog = mongoose.model("Blog", schema);
 module.exports = Blog;
