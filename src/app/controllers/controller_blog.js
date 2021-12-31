@@ -6,6 +6,8 @@ router.post('/blog', async(req, res) => {
     try{
         const{title, lide, format, container} = req.body;
 
+        console.log(title);
+
         const blog = await Blog.create(req.body);
 
         return res.send(blog);
