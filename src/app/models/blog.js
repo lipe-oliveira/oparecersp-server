@@ -37,7 +37,7 @@ const schema = new mongoose.Schema({
     }
 });
 
-await schema.plugin(mongoose_paginate);
+schema.plugin(mongoose_paginate);
 
 const Blog = mongoose.model("Blog", schema);
 module.exports = Blog;
