@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const Produtos = require("../models/produtos");
+const Blog = require("../models/blog");
 
-router.post('/post_produto', async(req, res) => {
+router.post('/blog', async(req, res) => {
     try{
-        const{nome, desc, valor} = req.body;
+        const{title, lide, format, container} = req.body;
 
-        const produto = await Produtos.create(req.body);
+        const blog = await Blog.create(req.body);
 
-        return res.send(produto);
+        return res.send(blog);
     }
     catch(err){
         console.log(err);

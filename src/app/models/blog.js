@@ -2,25 +2,34 @@ const mongoose = require("../../database/index");
 const mongoose_paginate = require('mongoose-paginate');
 
 const schema = new mongoose.Schema({
-    dono:{
+    autor:{
         type: String,
         required: true
     },
-    wpp:{
+    title:{
         type:String,
         required:true
     },
-    email: {
+    lide: {
         type: String,
         required:true
     },
-    destaque_fotos:[
+    container:[
         {
-        imagem:{
+        text: {
+            type: String
+        },
+        datatype:{
+            type: String
+        },
+        data:{
             type: String,
-            setMaxListeners: 100000000000000000000000000000000000000000000000        }
-    }
-],
+            setMaxListeners: 1000000}
+        }
+    ],
+    format:{
+        type: String
+    },
     createdAt:{
         type: Date,
         default: Date.now
@@ -29,5 +38,5 @@ const schema = new mongoose.Schema({
 
 schema.plugin(mongoose_paginate);
 
-const Contato = mongoose.model("Contato", schema);
-module.exports = Contato;
+const Blog = mongoose.model("Blog", schema);
+module.exports = Blog;
