@@ -12,7 +12,7 @@ const schema = new mongoose.Schema({
     },
     lide: {
         type: String,
-        required:true
+        required:false
     },
     container:[
         {
