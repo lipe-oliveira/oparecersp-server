@@ -2,7 +2,7 @@ const mongoose = require("../../database/index");
 const mongoose_paginate = require('mongoose-paginate');
 
 const schema = new mongoose.Schema({
-    autor:{
+    author:{
         type: String,
         required: true
     },
