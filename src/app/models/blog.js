@@ -4,11 +4,11 @@ const mongoose_paginate = require('mongoose-paginate');
 const schema = new mongoose.Schema({
     author:{
         type: String,
-        required: true
+        required: false
     },
     title:{
         type:String,
-        required:true
+        required:false
     },
     lide: {
         type: String,
