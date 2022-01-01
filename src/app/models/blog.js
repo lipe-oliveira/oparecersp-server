@@ -17,14 +17,18 @@ const schema = new mongoose.Schema({
     container:[
         {
         text: {
-            type: String
+            type: String,
+            required: true
         },
         datatype:{
-            type: String
+            type: String,
+            required: false
+
         },
         data:{
             type: String,
-            setMaxListeners: 1000000
+            setMaxListeners: 1000000,
+            required: false
         }
         }
     ],
