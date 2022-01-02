@@ -17,25 +17,6 @@ router.post('/blog', async(req, res) => {
     }
 });
 
-router.post('/post_produto_img', async(req, res) => {
-    try{
-        const{id, img} = req.body;
-
-        const produto = await Produtos.findById(id);
-
-        pusher = {
-            imagem:img
-        }
-        await produto.imgs.push(pusher)
-        await produto.save()
-
-        return res.send(produto);
-    }
-    catch(err){
-        console.log(err);
-    }
-});
-
 router.get('/list', async (req, res)=>{
     try{
         const {page = 1} = req.query;
@@ -47,28 +28,10 @@ router.get('/list', async (req, res)=>{
     }
 });
 
-router.post('/post_get_produtos_imgs', async (req, res)=>{
-    try{
-        const {id} = req.body;
-        produto = await Produtos.findById(id);
-        console.log( produto );
 
-        const { imgs } = produto;
-
-
-        return res.send({imgs});
-
-    }
-    catch(err){
-        console.log(err);
-    }
-});
-
-
-router.get('/get_produtos/:id', async (req, res)=>{
-    try{
-        
-        return res.send(await Produtos.findById(req.params.id));
+router.get('/listById/:id', async (req, res)=>{
+    try{        
+        return res.send(await Blog.findById(req.params.id));
     }
     catch(err){
 
@@ -78,8 +41,8 @@ router.get('/get_produtos/:id', async (req, res)=>{
 router.post('/delete', async (req, res)=>{
     try{
         const { _id } = req.body
-        await Produtos.findByIdAndRemove({_id})
-        return res.send(await Produtos.findById({_id}));
+        await Blog.findByIdAndRemove({_id})
+        return res.send(await Blog.findByIdAndRemove({_id}));
     }
     catch(err){
 
