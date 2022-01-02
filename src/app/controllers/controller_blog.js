@@ -8,9 +8,9 @@ router.post('/blog', async(req, res) => {
 
         console.log(req.body);
 
-        await Blog.create(req.body);
+        const blog = await Blog.create(req.body);
 
-        return await res.send("Success");
+        return res.send({blog});
     }
     catch(err){
         console.log("erro:" + err);
