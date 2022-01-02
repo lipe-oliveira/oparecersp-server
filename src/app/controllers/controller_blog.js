@@ -36,7 +36,7 @@ router.post('/post_produto_img', async(req, res) => {
     }
 });
 
-router.get('/get_produtos', async (req, res)=>{
+router.get('/list', async (req, res)=>{
     try{
         const {page = 1} = req.query;
 
